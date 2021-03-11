@@ -1,21 +1,28 @@
 package com.company;
 
 public class pyramid {
-    private int rows; int numRow;
+    private int numRow;
 
-    public pyramid(int rows, int numRow){
-        this.rows=rows;
-        this.numRow=numRow;
+    public pyramid(int numRow) {
+        //this.rows=rows;
+        this.numRow = numRow;  //make numRow public
 
-        //make three different triangles...
+        //make three different triangles...outer loops and L and R half?
 
-        for(int rows=1; rows <= numRow; rows++){
-            for(int i=1; i<=numRow-rows;i++)
+        for (int x=1; x<=numRow; x++) {
+            for (int y=1; y<=(numRow-x) * 2; y++) {
                 System.out.print(" ");
-
-       for(int k = rows; k >=1; k--)
-           System.out.print((k>=10) ? " " + k : " " + k);
+            }
+            //make the L side of the pmid
+            for (int z=x; z>=1; z--) {
+                System.out.print(" " + z);
+            }
+            //make the R side of the pmid
+            for (int l=2; l<=x; l++) {
+                System.out.print(" " + l);
+            }
+            System.out.println();
 
         }
-
     }
+}
